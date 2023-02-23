@@ -6,6 +6,6 @@ class Mur(pygame.sprite.Sprite):
         super().__init__()
         self.image = pygame.Surface((10,10))
         self.rect = self.image.get_rect()
-        self.image.fill((0,0,255))
+        self.image.fill("#715fde")
         self.rect.x=x
         self.rect.y=y

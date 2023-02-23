@@ -1,9 +1,29 @@
 from random import choice
 from mur import Mur
+import pygame
+
+screen_width, screen_height = pygame.display.Info().current_w, pygame.display.Info().current_h
+
+ratio_affichage = 2/1 # Exemple de ratio d'aspect souhaité
+
+ratio_ecran = screen_width / screen_height
+
+if ratio_affichage < ratio_ecran:
+    taille_affichage_h = screen_height
+    taille_affichage_l = ratio_affichage * taille_affichage_h
+else:
+    taille_affichage_l = screen_width
+    taille_affichage_h = taille_affichage_l / ratio_affichage
+
+print(int(screen_width/9.6)+1, int(screen_height/10.2)+1)
 
 class Labyrinthe:
     def __init__(self):
-        self.size = 69  # taille du labyrinthe (c'est un carré du coup)
+        
+        # taille du labyrinthe (c'est un carré du coup)
+        self.larg = 191
+        self.haut = 101
+
         self.grid = []  # liste deux dimensions (axe x, axe y), une valeur (aux coordonnées (x, y)) symbolise une case du labyrinthe
         self.tiles_dict = {}  # dictionnaire pour toutes les cases sous la forme {(x, y) = value}
         self.Mur=[]
@@ -13,12 +33,12 @@ class Labyrinthe:
     def create_grid_kruskal(self):
 
         ### Création de la grille uniquement avec des murs ___________________________________________________________ #
-        self.grid = [['1' for _ in range(self.size)] for _ in range(self.size)]
+        self.grid = [['1' for _ in range(self.larg)] for _ in range(self.haut)]
 
         ### Ajout des cases tout les un mur sur deux et assignement de leur valeur ___________________________________ #
         count = 100  # on commence à 100 pour que le print final soit plus graphique
-        for y in range(1, self.size - 1, 2):
-            for x in range(1, self.size - 1, 2):
+        for y in range(1, self.haut - 1, 2):
+            for x in range(1, self.larg - 1, 2):
                 self.grid[y][x] = count
                 self.tiles_dict[(x, y)] = count  # ajout de la case dans le dictionnaire
                 count += 1
@@ -95,13 +115,13 @@ class Labyrinthe:
         if x > 1:
             neighborhood_list.append((x - 2, y))
 
-        if x < self.size - 2:
+        if x < self.larg - 2:
             neighborhood_list.append((x + 2, y))
 
         if y > 1:
             neighborhood_list.append((x, y - 2))
 
-        if y < self.size - 2:
+        if y < self.haut - 2:
             neighborhood_list.append((x, y + 2))
 
         return neighborhood_list
@@ -121,11 +141,11 @@ class Labyrinthe:
 
     def depart_arrivee(self):
         self.grid[1][1] = 100
-        self.grid[self.size-2][self.size-2] = 100
+        self.grid[self.haut-2][self.larg-2] = 100
         self.start = (1, 1)   #Départ
-        self.end = (self.size-2, self.size-2)  #Arrivée
+        self.end = (self.haut-2, self.larg-2)  #Arrivée
 
 
 lab = Labyrinthe()
 lab.create_grid_kruskal()
-print(*lab.grid, sep='\n')
+#print(*lab.grid, sep='\n')

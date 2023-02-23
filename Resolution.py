@@ -24,7 +24,7 @@ class Resolution(pygame.sprite.Sprite):
         start = self.start
         end = self.end
 
-        pprint(a)
+        #pprint(a)
 
 
         m = []
