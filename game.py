@@ -64,7 +64,7 @@ class Game:
                 self.screen.blit(self.surface, (0, 0))
 
                 for elt in res_path:
-
+                    
                     Ligne(elt[0], elt[1])
                     ligne = pygame.Surface((10, 10))
                     rect = ligne.get_rect()
@@ -73,6 +73,12 @@ class Game:
                     ligne.fill((255, 61, 61))
                     self.screen.blit(ligne, rect)
 
-                pygame.display.update()
+                    pygame.display.update()
 
-        pygame.quit()
+                    if (elt == res_path[-1]):
+                        game_interface = "finie"
+            
+            if game_interface == "finie":
+                pass
+
+        # pygame.quit()
