@@ -1,3 +1,4 @@
+from time import sleep
 import pygame
 
 pygame.init()
@@ -12,13 +13,13 @@ class Game:
 
         # creer la fenetre du jeu
 
-        screen_width, screen_height = pygame.display.Info().current_w, pygame.display.Info().current_h
+        # 1900, screen_height = pygame.display.Info().current_w, pygame.display.Info().current_h
 
-        self.screen = pygame.display.set_mode((screen_width, screen_height-60))
+        self.screen = pygame.display.set_mode((1910, 1010))
         pygame.display.set_caption("Labyrinthe")
         self.lab = Labyrinthe()
         self.groupe_mur = pygame.sprite.Group()
-        self.surface = pygame.Surface((screen_width, screen_height-60))
+        self.surface = pygame.Surface((1910, 1010))
         self.screen.fill((204, 204, 255))
 
     def run (self):
@@ -29,15 +30,16 @@ class Game:
 
         # Si Interface labyrinthe :
         if game_interface == 'en_jeu':
-
+            n=0
             grid = self.lab.create_lab()
             for elt in self.lab.Mur:
                 self.groupe_mur.add(elt)
 
-            print(self.lab.start, self.lab.end)
-            print(self.lab.start[0]-1, self.lab.end[1]+1)
-            print((self.lab.start[0]-1, self.lab.start[1]),
-                  (self.lab.end[0], self.lab.end[1]+1))
+
+            # print(self.lab.start, self.lab.end)
+            # print(self.lab.start[0]-1, self.lab.end[1]+1)
+            # print((self.lab.start[0]-1, self.lab.start[1]),
+            #       (self.lab.end[0], self.lab.end[1]+1))
 
             res = Resolution(grid, self.lab.start, self.lab.end)
 
@@ -74,6 +76,7 @@ class Game:
                     self.screen.blit(ligne, rect)
 
                     pygame.display.update()
+                    sleep(0.01)
 
                     if (elt == res_path[-1]):
                         game_interface = "finie"

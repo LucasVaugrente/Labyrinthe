@@ -1,6 +1,7 @@
 from random import choice
 from mur import Mur
 import pygame
+import random as rand
 
 screen_width, screen_height = pygame.display.Info().current_w, pygame.display.Info().current_h
 
@@ -15,7 +16,7 @@ else:
     taille_affichage_l = screen_width
     taille_affichage_h = taille_affichage_l / ratio_affichage
 
-print(int(screen_width/9.6)+1, int(screen_height/10.2)+1)
+#print(int(screen_width/9.6)+1, int(screen_height/10.2)+1)
 
 class Labyrinthe:
     def __init__(self):
@@ -137,15 +138,27 @@ class Labyrinthe:
                 x += 1
             y += 1
 
+        # Boucle qui casse des murs aléatoirement pour rendre le labyrinthe complexe
+        # for i in range(100):
+        #     j = rand.randint(1, 50)
+        #     k = rand.randint(1, 50)
+        #     if self.grid[j][k] == '100':
+        # for j in range(10):
+        #     for k in range(10):
+        #         self.grid[j][k] = '1'
+        #         self.Ligne.append(Ligne(j, k))
+
         return self.grid
 
     def depart_arrivee(self):
         self.grid[1][1] = 100
         self.grid[self.haut-2][self.larg-2] = 100
-        self.start = (1, 1)   #Départ
-        self.end = (self.haut-2, self.larg-2)  #Arrivée
+        self.start = (self.haut-2, self.larg-2)   #Départ
+        self.end = (1, 1)  #Arrivée
 
 
 lab = Labyrinthe()
 lab.create_grid_kruskal()
-#print(*lab.grid, sep='\n')
+# print(*lab.grid, sep='\n')
+# arr = np.array(lab.grid)
+# print(lab.grid[1][1])
