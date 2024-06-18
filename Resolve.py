@@ -1,10 +1,6 @@
 import pygame
 
-
-from pprint import pprint
-
-
-class Resolution(pygame.sprite.Sprite):
+class Resolve(pygame.sprite.Sprite):
 
     def __init__ (self, lab: list, start : tuple, end : tuple):
         super().__init__()
@@ -23,9 +19,6 @@ class Resolution(pygame.sprite.Sprite):
         a = self.lab
         start = self.start
         end = self.end
-
-        #pprint(a)
-
 
         m = []
         for i in range(len(a)):

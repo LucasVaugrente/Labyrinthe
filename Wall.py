@@ -1,6 +1,6 @@
 import pygame
 
-class Mur(pygame.sprite.Sprite):
+class Wall(pygame.sprite.Sprite):
 
     def __init__(self, x, y):
         super().__init__()

@@ -2,9 +2,9 @@ from time import sleep
 import pygame
 
 pygame.init()
-from generation_lab import Labyrinthe
-from ligne import Ligne
-from Resolution import Resolution
+from Labyrinthe import Labyrinthe
+from Line import Line
+from Resolve import Resolve
 
 
 class Game:
@@ -41,7 +41,7 @@ class Game:
             # print((self.lab.start[0]-1, self.lab.start[1]),
             #       (self.lab.end[0], self.lab.end[1]+1))
 
-            res = Resolution(grid, self.lab.start, self.lab.end)
+            res = Resolve(grid, self.lab.start, self.lab.end)
 
             res_path = res.res_dfs()
             #print(res_path)
@@ -67,7 +67,7 @@ class Game:
 
                 for elt in res_path:
                     
-                    Ligne(elt[0], elt[1])
+                    Line(elt[0], elt[1])
                     ligne = pygame.Surface((10, 10))
                     rect = ligne.get_rect()
                     rect.x = elt[1]*10

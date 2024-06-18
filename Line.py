@@ -1,7 +1,7 @@
 import pygame
 
 
-class Ligne(pygame.sprite.Sprite):
+class Line(pygame.sprite.Sprite):
 
     def __init__ (self, x, y):
         x = x * 10

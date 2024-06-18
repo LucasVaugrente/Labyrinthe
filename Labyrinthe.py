@@ -1,5 +1,5 @@
 from random import choice
-from mur import Mur
+from Wall import Wall
 import pygame
 import random as rand
 
@@ -134,7 +134,7 @@ class Labyrinthe:
             x = 0
             for tile in row:
                 if tile == '1':
-                    self.Mur.append(Mur(x * 10, y * 10))
+                    self.Mur.append(Wall(x * 10, y * 10))
                 x += 1
             y += 1
 
