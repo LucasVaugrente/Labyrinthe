@@ -1,4 +1,4 @@
-# 🌐 Maze Generator
+# 🗝️ Maze Generator
 
 ![Language](https://img.shields.io/badge/Language-Python-ffdd63)
 ![Language](https://img.shields.io/badge/Language-Pygame-e56652)
