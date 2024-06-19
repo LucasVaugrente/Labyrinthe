@@ -1,13 +1,17 @@
-## Projet NSI
-### Création d'un Labyrinthe avec Auto-Résolution
+# 🌐 Maze Generator
 
-Ce projet est réalisé dans le cadre de la Terminale NSI par Nathanaël et Lucas. Il s'agit d'un petit logiciel développé en Python en utilisant le module Pygame.
+![Language](https://img.shields.io/badge/Language-Python-ffdd63)
+![Language](https://img.shields.io/badge/Language-Pygame-e56652)
+![Size](https://img.shields.io/badge/Size-70Ko-f12222)
+![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)
 
-Notre objectif est de créer un labyrinthe capable de se résoudre automatiquement. Ce projet combine à la fois la construction du labyrinthe aléatoirement ainsi que son auto-résolution.
+<br/>
 
-## Détails du Projet :
-- Titre du Projet : Création d'un Labyrinthe avec Auto-Résolution
-- Classe : Terminale NSI
-- Participants : Nathanaël et Lucas
-- Langage de Programmation : Python
-- Module Utilisé : Pygame
+A maze generator with self-solving.
+
+<br/>
+
+# 🙏 Credits
+
+* [**Lucas Vaugrente**](https://github.com/lucasvaugrente) : Co-creator of the project.
+* [**Nathanaël**] : Co-creator of the project.
