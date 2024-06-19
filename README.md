@@ -14,4 +14,4 @@ A maze generator with self-solving.
 # 🙏 Credits
 
 * [**Lucas Vaugrente**](https://github.com/lucasvaugrente) : Co-creator of the project.
-* [**Nathanaël**] : Co-creator of the project.
+* **Nathanaël** : Co-creator of the project.
